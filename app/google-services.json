@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "606861109201",
+    "firebase_url": "https://coinflow-47232.firebaseio.com",
+    "project_id": "coinflow-47232",
+    "storage_bucket": "coinflow-47232.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606861109201:android:66b2f6869876ae7e",
+        "android_client_info": {
+          "package_name": "com.albert.coinflow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606861109201-6bce67r38s78cv0i3hgmvu0orn5k4dp4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.albert.coinflow",
+            "certificate_hash": "f319686210efcb126fed4a8456018020221027c0"
+          }
+        },
+        {
+          "client_id": "606861109201-nl3lkmhqqcrhbmpbgdsbq7mmrrrotpsc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx8ktVHCfh95mWLgqfjxUIJRDbKSDqDmw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606861109201-nl3lkmhqqcrhbmpbgdsbq7mmrrrotpsc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
