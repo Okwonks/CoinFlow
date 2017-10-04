@@ -11,13 +11,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-
-import android.widget.TextView;
 
 import com.albert.coinflow.R;
 
@@ -104,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    MainFragment main = new MainFragment();
+                    DailyFragment main = new DailyFragment();
                     return main;
                 case 1:
                     Tab2Fragment tab2 = new Tab2Fragment();
