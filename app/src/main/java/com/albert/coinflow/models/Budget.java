@@ -9,6 +9,7 @@ public class Budget {
     private String expenses;
     private String income;
     private String total;
+    private String pushId;
 
     public Budget() {}
 
@@ -35,5 +36,13 @@ public class Budget {
         Integer calculateTotal = Integer.parseInt(income) - Integer.parseInt(expenses);
         total = calculateTotal.toString();
         return total;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }
