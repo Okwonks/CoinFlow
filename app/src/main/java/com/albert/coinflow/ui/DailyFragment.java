@@ -43,12 +43,12 @@ public class DailyFragment extends Fragment {
 
     public void setUpFirebaseAdapter() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
+//        String uid = user.getUid();
 
         Query query = FirebaseDatabase
                 .getInstance()
-                .getReference(Constants.FIREBASE_CHILD_BUDGET)
-                .child(uid);
+                .getReference(Constants.FIREBASE_CHILD_BUDGET);
+//                .child(uid);
 
         mFirebaseAdapter = new FirebaseBudgetListAdapter(Budget.class, R.layout.daily_expenses_list, FirebaseBudgetViewHolder.class, query, getActivity());
 
@@ -62,5 +62,11 @@ public class DailyFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(mFirebaseAdapter);
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mFirebaseAdapter.cleanup();
     }
 }
