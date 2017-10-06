@@ -22,11 +22,11 @@ public class FirebaseBudgetViewHolder extends RecyclerView.ViewHolder {
         TextView dateTextView = mView.findViewById(R.id.dateTextView);
         TextView expensesTextView = mView.findViewById(R.id.expensesTextView);
         TextView incomeTextView = mView.findViewById(R.id.incomeTextView);
-        TextView totalTextView = mView.findViewById(R.id.totalTextView);
+//        TextView totalTextView = mView.findViewById(R.id.totalTextView);
         // Set values
         dateTextView.setText(budget.getDate());
         expensesTextView.setText(budget.getExpenses());
         incomeTextView.setText(budget.getIncome());
-        totalTextView.setText(budget.getTotal());
+//        totalTextView.setText(budget.getTotal());
     }
 }

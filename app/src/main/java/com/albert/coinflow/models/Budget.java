@@ -7,17 +7,17 @@ import org.parceler.Parcel;
 public class Budget {
     private String date;
     private String expenses;
+    private String moneySaved;
     private String income;
     private String total;
     private String pushId;
 
     public Budget() {}
 
-    public Budget(String date, String expenses, String income, String total) {
+    public Budget(String date, String expenses, String moneySaved) {
         this.date = date;
         this.expenses = expenses;
-        this.income = income;
-        this.total = total;
+        this.moneySaved = moneySaved;
     }
 
     public String getDate() {
@@ -33,9 +33,17 @@ public class Budget {
     }
 
     public String getTotal() {
-        Integer calculateTotal = Integer.parseInt(income) - Integer.parseInt(expenses);
+        Integer calculateTotal = Integer.parseInt(moneySaved) - Integer.parseInt(expenses);
         total = calculateTotal.toString();
         return total;
+    }
+
+    public String getMoneySaved() {
+        return moneySaved;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
     }
 
     public String getPushId() {

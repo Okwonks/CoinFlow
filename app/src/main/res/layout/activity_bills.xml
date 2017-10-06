@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.albert.coinflow.ui.BillsActivity">
+
+    <EditText
+        android:id="@+id/expensesEditText"
+        android:background="@android:color/white"
+        android:hint="Expenses"
+        android:inputType="number"
+        android:textColorHint="@color/colorDivider"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="@dimen/edit_text_height"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="151dp"
+        app:layout_constraintHorizontal_bias="0.161" />
+
+    <EditText
+        android:hint="Money Saved"
+        android:textColorHint="@color/colorDivider"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:background="@android:color/white"
+        android:inputType="number"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="@dimen/edit_text_height"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/expensesEditText"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        android:id="@+id/savedMoneyEditText" />
+
+    <EditText
+        android:hint="Date"
+        android:textColorHint="@color/colorDivider"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:background="@android:color/white"
+        android:inputType="date"
+        android:layout_width="@dimen/edit_text_width"
+        android:layout_height="@dimen/edit_text_height"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/savedMoneyEditText"
+        android:id="@+id/dateEditText" />
+
+    <Button
+        android:text="Add"
+        android:textColor="@color/colorTextIcons"
+        android:background="@color/colorAccent"
+        android:layout_width="@dimen/edit_text_width_half"
+        android:layout_height="@dimen/edit_text_height"
+        android:layout_marginRight="79dp"
+        android:layout_marginEnd="79dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/dateEditText"
+        android:id="@+id/addButton"
+        app:layout_constraintLeft_toRightOf="@+id/cancelButton"
+        android:layout_marginLeft="8dp" />
+
+    <Button
+        android:text="Cancel"
+        android:textColor="@color/colorTextIcons"
+        android:background="@android:color/holo_red_light"
+        android:layout_width="@dimen/edit_text_width_half"
+        android:layout_height="@dimen/edit_text_height"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/dateEditText"
+        android:layout_marginLeft="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/cancelButton" />
+
+</android.support.constraint.ConstraintLayout>
