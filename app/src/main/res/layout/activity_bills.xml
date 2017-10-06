@@ -44,12 +44,11 @@
         android:id="@+id/savedMoneyEditText" />
 
     <EditText
-        android:hint="Date"
+        android:hint="Day"
         android:textColorHint="@color/colorDivider"
         android:textSize="20sp"
         android:padding="10dp"
         android:background="@android:color/white"
-        android:inputType="date"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="@dimen/edit_text_height"
         android:layout_marginLeft="8dp"
@@ -59,7 +58,7 @@
         app:layout_constraintHorizontal_bias="0.161"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/savedMoneyEditText"
-        android:id="@+id/dateEditText" />
+        android:id="@+id/dayEditText" />
 
     <Button
         android:text="Add"
@@ -71,7 +70,7 @@
         android:layout_marginEnd="79dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/dateEditText"
+        app:layout_constraintTop_toBottomOf="@+id/dayEditText"
         android:id="@+id/addButton"
         app:layout_constraintLeft_toRightOf="@+id/cancelButton"
         android:layout_marginLeft="8dp" />
@@ -83,7 +82,7 @@
         android:layout_width="@dimen/edit_text_width_half"
         android:layout_height="@dimen/edit_text_height"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/dateEditText"
+        app:layout_constraintTop_toBottomOf="@+id/dayEditText"
         android:layout_marginLeft="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/cancelButton" />

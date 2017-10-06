@@ -24,7 +24,7 @@ public class BillsActivity extends AppCompatActivity implements View.OnClickList
     private ValueEventListener mBudgetReferenceListener;
     @Bind(R.id.expensesEditText) EditText mExpensesText;
     @Bind(R.id.savedMoneyEditText) EditText mSavedMoneyText;
-    @Bind(R.id.dateEditText) EditText mDateText;
+    @Bind(R.id.dayEditText) EditText mDateText;
     @Bind(R.id.addButton) Button mAddButton;
     @Bind(R.id.cancelButton) Button mCancelButton;
 
@@ -74,9 +74,8 @@ public class BillsActivity extends AppCompatActivity implements View.OnClickList
                 .getReference(Constants.FIREBASE_CHILD_BUDGET)
                 .child(uid);
         DatabaseReference pushRef = budgetRef.push();
-//        String total = budget.getTotal();
+
         String pushId = pushRef.getKey();
-//        budget.setTotal(total); // Not sure if this will work, check this if it crashes.
         budget.setPushId(pushId);
         pushRef.setValue(budget);
     }

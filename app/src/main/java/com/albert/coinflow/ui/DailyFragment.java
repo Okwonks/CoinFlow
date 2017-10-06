@@ -13,7 +13,7 @@ import com.albert.coinflow.R;
 import com.albert.coinflow.adapters.FirebaseBudgetListAdapter;
 import com.albert.coinflow.adapters.FirebaseBudgetViewHolder;
 import com.albert.coinflow.models.Budget;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
+//import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -43,25 +43,18 @@ public class DailyFragment extends Fragment {
 
     public void setUpFirebaseAdapter() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        String uid = user.getUid();
+        String uid = user.getUid();
 
         Query query = FirebaseDatabase
                 .getInstance()
-                .getReference(Constants.FIREBASE_CHILD_BUDGET);
-//                .child(uid);
+                .getReference(Constants.FIREBASE_CHILD_BUDGET)
+                .child(uid);
 
         mFirebaseAdapter = new FirebaseBudgetListAdapter(Budget.class, R.layout.daily_expenses_list, FirebaseBudgetViewHolder.class, query, getActivity());
 
-//        mFirebaseAdapter = new FirebaseRecyclerAdapter<Budget, FirebaseBudgetViewHolder>(Budget.class, R.layout.daily_expenses_list, FirebaseBudgetViewHolder.class, mBudgetReference) {
-//          @Override
-//            protected void populateViewHolder(FirebaseBudgetViewHolder viewHolder, Budget model, int position) {
-//              viewHolder.bindBudget(model);
-//          }
-//        };
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(mFirebaseAdapter);
-
     }
 
     @Override

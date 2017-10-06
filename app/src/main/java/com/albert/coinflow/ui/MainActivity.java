@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == mFabBudget) {
             if (mAuth.getCurrentUser() != null) {
-                Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show(); // This is just a placeholder
+                Intent intent = new Intent(MainActivity.this, BillsActivity.class);
+                startActivity(intent);
             } else {
                 Snackbar.make(view, "You are required to Sign In", Snackbar.LENGTH_SHORT)
                         .setAction("SIGN IN", new View.OnClickListener() {
