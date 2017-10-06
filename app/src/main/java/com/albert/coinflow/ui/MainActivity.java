@@ -15,7 +15,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.albert.coinflow.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -119,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 case 1:
                     return new DailyFragment();
                 case 2:
-                    Tab3Fragment tab3 = new Tab3Fragment();
+                    MonthlyFragment tab3 = new MonthlyFragment();
                     return tab3;
             }
             return null;

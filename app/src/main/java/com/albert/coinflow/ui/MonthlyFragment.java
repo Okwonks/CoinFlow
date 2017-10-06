@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.albert.coinflow.R;
 
-public class Tab3Fragment extends Fragment {
+public class MonthlyFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
