@@ -113,13 +113,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    OverviewFragment tab2 = new OverviewFragment();
-                    return tab2;
+                    return new OverviewFragment(); // Opens the fragment with the overview/main fragment
                 case 1:
-                    return new DailyFragment();
+                    return new DailyFragment(); // The position where the DailyFragment is located is opened
                 case 2:
-                    MonthlyFragment tab3 = new MonthlyFragment();
-                    return tab3;
+                    return new MonthlyFragment(); // Opens the monthly fragment which holds the CalendarView
             }
             return null;
         }
