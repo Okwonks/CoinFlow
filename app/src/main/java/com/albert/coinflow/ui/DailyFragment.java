@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.albert.coinflow.Constants;
 import com.albert.coinflow.R;
@@ -28,6 +29,7 @@ public class DailyFragment extends Fragment {
     private FirebaseBudgetListAdapter mFirebaseAdapter;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+    @Bind(R.id.welcomeTextView) TextView mWelcomeTextView;
 
     public DailyFragment() {
         // Required empty public constructor
@@ -45,16 +47,22 @@ public class DailyFragment extends Fragment {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
 
-        Query query = FirebaseDatabase
-                .getInstance()
-                .getReference(Constants.FIREBASE_CHILD_BUDGET)
-                .child(uid);
+        if (user != null) {
+            mWelcomeTextView.setVisibility(View.INVISIBLE);
+            Query query = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_BUDGET)
+                    .child(uid);
 
-        mFirebaseAdapter = new FirebaseBudgetListAdapter(Budget.class, R.layout.daily_expenses_list, FirebaseBudgetViewHolder.class, query, getActivity());
+            mFirebaseAdapter = new FirebaseBudgetListAdapter(Budget.class, R.layout.daily_expenses_list, FirebaseBudgetViewHolder.class, query, getActivity());
 
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setAdapter(mFirebaseAdapter);
+            mRecyclerView.setHasFixedSize(true);
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+            mRecyclerView.setAdapter(mFirebaseAdapter);
+        } else {
+            // This else statement stops the app from crashing due to lack of logged in user.
+            mWelcomeTextView.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

@@ -5,4 +5,5 @@
     <string name="login_here">Already have an account? Login here</string>
     <string name="total_savings">Total savings:</string>
     <string name="savings_cash">2000</string>
+    <string name="login_welcome_text">You need to be logged in for this service.</string>
 </resources>

@@ -8,6 +8,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.albert.coinflow.ui.DailyFragment">
 
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:text="@string/login_welcome_text"
+        android:textColorHint="@color/colorDivider"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
