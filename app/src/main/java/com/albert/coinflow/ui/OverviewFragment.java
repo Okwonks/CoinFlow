@@ -45,9 +45,9 @@ public class OverviewFragment extends Fragment {
 
     public void setUpFirebaseAdapter() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
 
         if (user != null) {
+            String uid = user.getUid();
             mWelcomeTextView.setVisibility(View.INVISIBLE);
             Query query = FirebaseDatabase
                     .getInstance()
@@ -64,11 +64,5 @@ public class OverviewFragment extends Fragment {
             // This else statement stops the app from crashing due to lack of logged in user.
             mWelcomeTextView.setVisibility(View.VISIBLE);
         }
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mFirebaseAdapter.cleanup();
     }
 }

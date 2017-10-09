@@ -62,7 +62,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+
+        if (mAuth.getCurrentUser() == null) {
+            MenuItem item = menu.findItem(R.id.action_logout);
+            item.setVisible(false);
+        } else {
+            MenuItem item = menu.findItem(R.id.action_login);
+            item.setVisible(false);
+        }
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -75,6 +83,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if (id == R.id.action_logout) {
+            logout();
+            return true;
+        }
+
+        if (id == R.id.action_login) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -92,7 +110,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             @Override
                             public void onClick(View view) {
                                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
+                                finish();
                             }
                         }).show();
             }
@@ -140,5 +160,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             return null;
         }
+    }
+    /* Logout method */
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }

@@ -55,6 +55,7 @@ public class BillsActivity extends AppCompatActivity implements View.OnClickList
             saveBudgetToFirebase(budget); // Method to save data to Firebase
 
             Intent intent = new Intent(BillsActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
         }
